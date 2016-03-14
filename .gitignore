@@ -1,0 +1,14 @@
+############Ejercicio equipo KAREN, ABIGAIL, FABIOLA & YAHIR##########
+
+Elektra<-ts(read.csv("C:\\Users\\SALA-C28\\Documents\\Series Gaxiola\\table (1).csv"),frequency = 52,start = 2000)
+class(Elektra)
+open<-ts(Elektra[,1], start=2000,frequency = 52)
+high<-ts(Elektra[,2], start=2000,frequency = 52) 
+low<-ts(Elektra[,3], start=2000,frequency = 52)
+close<-ts(Elektra[,4], start=2000,frequency = 52)
+plot(open, main="Precio de apertura",xlab="Años",ylab="Precio",col="blue")
+plot(high, main="Precio mas alto",xlab="Años",ylab="Precio",col="blue")
+plot(low, main="Precio mas bajo",xlab="Años",ylab="Precio",col="blue")
+plot(close, main="Precio de cierre",xlab="Años",ylab="Precio",col="blue")
+elktramultipl<-ts.intersect(open,high,low,close)
+plot(elktramultipl, main="Precios históricos Elektra",xlab="Años",ylab="Precio",col="red")
